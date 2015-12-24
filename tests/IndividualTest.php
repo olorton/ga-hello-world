@@ -110,4 +110,20 @@ class IndividualTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals(5, strlen($individual));
     }
+
+    public function testSetString()
+    {
+        $individual = new Individual();
+        $individual->setString('HELLO WORLD');
+
+        $this->assertEquals('HELLO WORLD', $individual->__toString());
+    }
+
+    public function testToString()
+    {
+        $individual = new Individual();
+        $individual->setString('Jurgen Smurgen');
+
+        $this->assertEquals('Jurgen Smurgen', $individual->__toString());
+    }
 }

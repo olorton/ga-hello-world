@@ -39,6 +39,17 @@ class Individual
         return $this;
     }
 
+    public function setString($string)
+    {
+        $result = [];
+        foreach (str_split($string) as $char) {
+            $result[] = new Byte(ord($char));
+        }
+        $this->genes = $result;
+
+        return $this;
+    }
+
     /**
      * @return string
      */
@@ -69,7 +80,7 @@ class Individual
     {
         $result = '';
         foreach ($this->genes as $gene) {
-            $result .= chr(bindec($gene));
+            $result .= $gene->getChar();
         }
 
         return $result;
