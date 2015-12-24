@@ -1,0 +1,19 @@
+{
+  "name": "olorton/na-hello-world",
+  "description": "Natural Algorithm exercise, Hello World",
+  "autoload": {
+    "psr-4": {
+      "NaHelloWorld\\": "src/"
+    }
+  },
+  "require": {
+    "php": ">=5.5.14"
+  },
+  "minimum-stability": "stable",
+  "config": {
+    "bin-dir": "bin/"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^5.1"
+  }
+}
