@@ -55,6 +55,20 @@ class Byte
         return chr(bindec($this->byteString));
     }
 
+    public function mutate()
+    {
+        $bytes = str_split($this->byteString);
+        $i = rand(0, 7);
+
+        if ($bytes[$i] === '0') {
+            $bytes[$i] = '1';
+        } else {
+            $bytes[$i] = '0';
+        }
+
+        $this->byteString = implode('', $bytes);
+    }
+
     /**
      * @return string
      */

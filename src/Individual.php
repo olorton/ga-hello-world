@@ -106,4 +106,11 @@ class Individual
 
         return $score;
     }
+
+    public function mutate()
+    {
+        $this->genes[rand(0,count($this->genes) - 1)]->mutate();
+
+        return $this;
+    }
 }

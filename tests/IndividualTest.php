@@ -126,4 +126,13 @@ class IndividualTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals('Jurgen Smurgen', $individual->__toString());
     }
+
+    public function testMutation()
+    {
+        $individual = new Individual();
+        $individual->setString('Jurgen Smurgen');
+        $individual->mutate();
+
+        $this->assertNotEquals('Jurgen Smurgen', $individual->__toString());
+    }
 }

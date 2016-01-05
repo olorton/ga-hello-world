@@ -51,4 +51,12 @@ class ByteTest extends PHPUnit_Framework_TestCase
         // Would result in 10 characters: 1111101000
         $byte = new Byte(1000);
     }
+
+    public function testMutate()
+    {
+        $byte = new Byte(66);
+        $byte->mutate();
+
+        $this->assertNotEquals('B', $byte->getChar());
+    }
 }
