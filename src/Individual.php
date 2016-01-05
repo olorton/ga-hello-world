@@ -18,6 +18,11 @@ class Individual
         }
     }
 
+    public function getGeneCount()
+    {
+        return count($this->genes);
+    }
+
     /**
      * @param $position
      * @return Byte
@@ -69,7 +74,7 @@ class Individual
      */
     public function getMaxFitness()
     {
-        return count($this->genes) * 8;
+        return (count($this->genes) * 2) + (count($this->genes) * 8);
     }
 
 
@@ -87,6 +92,26 @@ class Individual
     }
 
     public function getFitnessScore($string)
+    {
+        return $this->getFitnessScoreBinary($string) + ($this->getFitnessScoreChars($string) * 2);
+    }
+
+    public function getFitnessScoreChars($target)
+    {
+        $current = str_split($this->__toString());
+        $target = str_split($target);
+
+        $score = 0;
+        foreach ($target as $i => $char) {
+            if ($char == $current[$i]) {
+                $score++;
+            }
+        }
+
+        return $score;
+    }
+
+    public function getFitnessScoreBinary($string)
     {
         $current = str_split($this->getGeneBinaryString());
         $target = [];
