@@ -83,6 +83,11 @@ class Population
         echo $b . ' --- ' .  $b->getGeneBinaryString() . ' --- ' . $b->getFitnessScore($this->targetString)  . ' / ' . $maxFitness;
         echo "\n";
 
+        if ($a->getFitnessScore($this->targetString) == $maxFitness) {
+            echo "Done\n";
+            exit(1);
+        }
+
         return $this;
     }
 
