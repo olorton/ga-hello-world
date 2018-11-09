@@ -98,8 +98,8 @@ class Population
 
         foreach($couples as $couple) {
             $children = $this->getChildren($couple);
-            $newPop[] = $children[0];
-            $newPop[] = $children[1];
+            $newPop[] = new Individual(0, $children[0]->__toString());
+            $newPop[] = new Individual(0, $children[1]->__toString());
         }
 
         $this->individuals = array_merge($this->individuals, $newPop);
@@ -109,7 +109,9 @@ class Population
 
     public function mutate($index)
     {
+        $original = $this->individuals[$index]->__toString();
         $this->individuals[$index] = $this->individuals[$index]->mutate();
+        $this->individuals[] = new Individual(0, $original);
 
         return $this;
     }

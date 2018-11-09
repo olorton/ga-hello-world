@@ -1,12 +1,5 @@
 # Genetic Algorithm Hello World
 
-This doesn't work (yet!). Something is wrong with either:
-
-- Fitness score
-- Mutation rate
-- Cross over (mating)
-- Next generation selection (currently best fit)
-
 ## Usage
 
 ### Installation
@@ -16,3 +9,5 @@ This doesn't work (yet!). Something is wrong with either:
 ### Run
 
     php main.php
+    
+Edit `main.php` to change the population size or the target string.

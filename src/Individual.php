@@ -11,10 +11,14 @@ class Individual
      * Individual constructor.
      * @param int $charCount
      */
-    public function __construct($charCount = 0)
+    public function __construct($charCount = 0, $string = null)
     {
         for ($i = 0; $i < $charCount; $i++) {
             $this->genes[] = new Byte(rand(32,126));
+        }
+
+        if ($string !== null) {
+            $this->setString($string);
         }
     }
 

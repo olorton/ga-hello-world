@@ -4,7 +4,9 @@ require_once __DIR__ . '/bootstrap.php';
 
 use NaHelloWorld\Population;
 
-$pop = new Population(10, 'Hello World');
+$popSize = 10;
+$targetString = 'Hello World';
+$pop = new Population($popSize, $targetString);
 while (true) {
     $pop->nextGeneration();
 }
