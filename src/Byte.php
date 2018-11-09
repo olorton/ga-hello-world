@@ -52,7 +52,12 @@ class Byte
      */
     public function getChar()
     {
-        return chr(bindec($this->byteString));
+        $dec = bindec($this->byteString);
+        if ($dec >= 32 && $dec <127) {
+            return chr($dec);
+        } else {
+            return chr(35);
+        }
     }
 
     public function mutate()
