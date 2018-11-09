@@ -64,7 +64,8 @@ class Population
         $this->mate();
 
         // Mutate
-        if (rand(0, 0) === 0 && count($this->individuals) > $this->maxSize) {
+        $randomness = 0; // Increase this to reduce mutation rate
+        if (rand(0, $randomness) === 0 && count($this->individuals) > $this->maxSize) {
             // Only mutate a child
             $index = rand($this->maxSize, ($this->maxSize / 2) - 1);
             $this->mutate($index);
